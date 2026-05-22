@@ -1,8 +1,11 @@
 #!/bin/bash
-# Wrapper script to set Chromium library path and run pdf-export
+# Wrapper script to set custom Chromium library path and run pdf-export
+# Usage: CHROME_LIB_PATH=/path/to/libs ./pdf-export.sh <url> [options]
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-LIB_DIR="/tmp/chrome-libs/extracted/usr/lib/x86_64-linux-gnu:/tmp/chrome-libs/extracted/lib/x86_64-linux-gnu"
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")" && pwd)"
 
-export CHROME_LIB_PATH="$LIB_DIR"
+if [ -n "$CHROME_LIB_PATH" ]; then
+  export CHROME_LIB_PATH
+fi
+
 exec node "$SCRIPT_DIR/index.js" "$@"

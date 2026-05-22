@@ -5,7 +5,15 @@
 ## 安装
 
 ```bash
-npm install -g .
+npm install -g pdf-export
+```
+
+安装时会自动下载 Chromium 浏览器。
+
+如果 Chromium 下载失败，可以手动安装：
+
+```bash
+npx playwright install chromium
 ```
 
 ## 用法
@@ -50,5 +58,12 @@ pdf-export https://example.com -l -w 3000
 
 ## 环境要求
 
-- Node.js
-- Chromium 浏览器（可通过 `npx playwright install chromium` 自动下载）
+- Node.js >= 18
+
+## 高级用法
+
+如果需要指定自定义 Chrome 路径或库路径，可设置环境变量：
+
+```bash
+CHROME_PATH=/path/to/chrome CHROME_LIB_PATH=/path/to/libs pdf-export https://example.com
+```

@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 
 const CHROME_PATH = process.env.CHROME_PATH || '';
-const LIB_PATH = process.env.CHROME_LIB_PATH || '/tmp/chrome-libs/extracted/usr/lib/x86_64-linux-gnu:/tmp/chrome-libs/extracted/lib/x86_64-linux-gnu';
+const LIB_PATH = process.env.CHROME_LIB_PATH || '';
 
 function buildEnv() {
   const env = { ...process.env };

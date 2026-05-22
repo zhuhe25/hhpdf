@@ -4,10 +4,10 @@
   "description": "Export any URL to PDF via CLI",
   "main": "index.js",
   "bin": {
-    "pdf-export": "./pdf-export.sh"
+    "pdf-export": "./index.js"
   },
   "scripts": {
-    "start": "./pdf-export.sh"
+    "postinstall": "npx playwright install chromium"
   },
   "dependencies": {
     "playwright": "^1.55.1"
