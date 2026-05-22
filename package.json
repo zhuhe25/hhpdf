@@ -1,0 +1,15 @@
+{
+  "name": "pdf-export",
+  "version": "1.0.0",
+  "description": "Export any URL to PDF via CLI",
+  "main": "index.js",
+  "bin": {
+    "pdf-export": "./pdf-export.sh"
+  },
+  "scripts": {
+    "start": "./pdf-export.sh"
+  },
+  "dependencies": {
+    "playwright": "^1.55.1"
+  }
+}
