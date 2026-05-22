@@ -1,54 +1,54 @@
 # pdf-export
 
-Export any URL to PDF from the command line.
+将任意网页导出为 PDF 的命令行工具。
 
-## Install
+## 安装
 
 ```bash
 npm install -g .
 ```
 
-## Usage
+## 用法
 
 ```bash
-pdf-export <url> [options]
+pdf-export <url> [选项]
 ```
 
-### Arguments
+### 参数
 
-| Argument | Description |
-|----------|-------------|
-| `url`    | The URL to export as PDF (required) |
+| 参数 | 说明 |
+|------|------|
+| `url` | 要导出的网页地址（必填） |
 
-### Options
+### 选项
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `-o, --output <path>` | `./output.pdf` | Output file path |
-| `-w, --wait <ms>` | `1000` | Extra wait time in ms after page load |
-| `-f, --format <size>` | `A4` | PDF format (e.g. A4, Letter) |
-| `-l, --landscape` | `false` | Use landscape orientation |
-| `--no-background` | `false` | Omit page background |
-| `-h, --help` | | Show help |
+| 选项 | 默认值 | 说明 |
+|------|--------|------|
+| `-o, --output <路径>` | `./output.pdf` | 输出文件路径 |
+| `-w, --wait <毫秒>` | `1000` | 页面加载后额外等待时间 |
+| `-f, --format <尺寸>` | `A4` | PDF 纸张尺寸（如 A4、Letter） |
+| `-l, --landscape` | `false` | 横向打印 |
+| `--no-background` | `false` | 不打印背景色 |
+| `-h, --help` | | 显示帮助信息 |
 
-### Examples
+### 示例
 
 ```bash
-# Basic usage
+# 基本用法
 pdf-export https://example.com
 
-# Custom output path and format
+# 自定义输出路径和纸张尺寸
 pdf-export https://example.com -o report.pdf -f Letter
 
-# Landscape with extra wait time
+# 横向打印，增加等待时间
 pdf-export https://example.com -l -w 3000
 ```
 
-## How It Works
+## 原理
 
-Uses [Playwright](https://playwright.dev) to launch a headless Chromium browser, navigate to the provided URL, and save the rendered page as a PDF.
+基于 [Playwright](https://playwright.dev) 启动无头 Chromium 浏览器，访问目标网页并保存为 PDF。
 
-## Requirements
+## 环境要求
 
 - Node.js
-- Chromium browser (Playwright will download one automatically via `npx playwright install chromium`)
+- Chromium 浏览器（可通过 `npx playwright install chromium` 自动下载）
