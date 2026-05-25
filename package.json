@@ -11,7 +11,7 @@
   },
   "files": [
     "index.js",
-    "pdf-export.sh",
+    "hhpdf.sh",
     "README.md",
     "LICENSE"
   ],
