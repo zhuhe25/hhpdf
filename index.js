@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+const path = require('path');
 const { chromium } = require('playwright');
 
 const CHROME_PATH = process.env.CHROME_PATH || '';
@@ -17,7 +19,7 @@ async function main() {
 
   if (args.length === 0 || args.includes('-h') || args.includes('--help')) {
     console.log(`
-Usage: pdf-export <url> [options]
+Usage: hhpdf <url> [options]
 
 Arguments:
   url                  The URL to export as PDF (required)
@@ -87,8 +89,8 @@ Options:
       printBackground,
     });
 
-    const { size } = require('fs').statSync(output);
-    console.log(`Done! PDF saved to ${require('path').resolve(output)} (${(size / 1024).toFixed(1)} KB)`);
+    const { size } = fs.statSync(output);
+    console.log(`Done! PDF saved to ${path.resolve(output)} (${(size / 1024).toFixed(1)} KB)`);
   } finally {
     await browser.close();
   }

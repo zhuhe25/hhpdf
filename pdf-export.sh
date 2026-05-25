@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wrapper script to set custom Chromium library path and run pdf-export
+# Wrapper script to set custom Chromium library path and run hhpdf
 # Usage: CHROME_LIB_PATH=/path/to/libs ./pdf-export.sh <url> [options]
 
 SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")" && pwd)"

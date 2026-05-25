@@ -1,11 +1,11 @@
-# pdf-export
+# hhpdf
 
 将任意网页导出为 PDF 的命令行工具。
 
 ## 安装
 
 ```bash
-npm install -g pdf-export
+npm install -g hhpdf
 ```
 
 安装时会自动下载 Chromium 浏览器。
@@ -19,7 +19,7 @@ npx playwright install chromium
 ## 用法
 
 ```bash
-pdf-export <url> [选项]
+hhpdf <url> [选项]
 ```
 
 ### 参数
@@ -43,13 +43,13 @@ pdf-export <url> [选项]
 
 ```bash
 # 基本用法
-pdf-export https://example.com
+hhpdf https://example.com
 
 # 自定义输出路径和纸张尺寸
-pdf-export https://example.com -o report.pdf -f Letter
+hhpdf https://example.com -o report.pdf -f Letter
 
 # 横向打印，增加等待时间
-pdf-export https://example.com -l -w 3000
+hhpdf https://example.com -l -w 3000
 ```
 
 ## 原理
@@ -65,5 +65,5 @@ pdf-export https://example.com -l -w 3000
 如果需要指定自定义 Chrome 路径或库路径，可设置环境变量：
 
 ```bash
-CHROME_PATH=/path/to/chrome CHROME_LIB_PATH=/path/to/libs pdf-export https://example.com
+CHROME_PATH=/path/to/chrome CHROME_LIB_PATH=/path/to/libs hhpdf https://example.com
 ```

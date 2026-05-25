@@ -1,15 +1,35 @@
 {
-  "name": "pdf-export",
+  "name": "hhpdf",
   "version": "1.0.0",
-  "description": "Export any URL to PDF via CLI",
+  "description": "将任意网页导出为 PDF 的命令行工具",
+  "keywords": ["pdf", "export", "cli", "playwright", "chromium", "网页导出", "pdf导出"],
+  "author": "zhuhe25",
+  "license": "MIT",
   "main": "index.js",
   "bin": {
-    "pdf-export": "./index.js"
+    "hhpdf": "./index.js"
   },
+  "files": [
+    "index.js",
+    "pdf-export.sh",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "postinstall": "npx playwright install chromium"
   },
   "dependencies": {
     "playwright": "^1.55.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuhe25/hhpdf.git"
+  },
+  "homepage": "https://github.com/zhuhe25/hhpdf#readme",
+  "bugs": {
+    "url": "https://github.com/zhuhe25/hhpdf/issues"
   }
 }
